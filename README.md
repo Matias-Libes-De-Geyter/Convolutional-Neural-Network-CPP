@@ -10,7 +10,7 @@ The aim of this project was to create a simple Convolutional Neural Network (CNN
 ### Why C++ ?
 - Firstly, I used C++ because I'm much more familiar with it than Python. Therefore, I challenged myself to build a CNN from scratch, without pytorch or similar libraries.
 - Secondly, I wanted to transfert my code onto CUDA, to use GPU's acceleration and multithreading. It's still in the making for the CNN project, even though it was done partially in my MLP project.
-- Finally, I use the C++ graphic library "SFML" 3.0 to ask the user to draw a number, and ask the MLP to output its guess.
+- Finally, I use the C++ graphic library "SFML" 3.0 to ask the user to draw a number, and ask the CNN to output its guess.
 
 ## Demo
 
@@ -56,11 +56,13 @@ After training on the whole train database, the model provides an **accuracy of 
 *- In parallel, the code on CUDA ran two to four times faster than the basic C++ code. It is an interesting result that could be useful in the future.*
 
 ### Discussion
-- The tests runs well on MNIST database, but when drawing numbers, the accuracy drops. This could be because the numbers of the database used for training are all centered, and that the way they were generated was different than mine. I implemented a gradient around the brush to fit the MNIST database-style and it gave better results. Still, the way the CNN works make it work better that the MLP, for the same accuracy.
+- The network achieves high accuracy on MNIST database, but on freehand drawings, the performance significantly drops. This could be because the numbers of the database used for training are all centered, and that the way they were generated was different than mine. I implemented a gradient around the brush to fit the MNIST database-style and it gave better results. A way to improve on freehand drawings would be to incorporate more varied training data, such as augmented with rotations, translations, and elastic distortions.
 
 ### Next steps
 - I didn't implement flooding. It could improve the model.
 - The next move would be to implement max-pooling layers and/or batch normalization to solve this problem. When writing by hand it doesn't give satisfying results (clearly above 70% accuracy but clearly below 90%).
+- For performance, we could also try alternative optimizers like RMSprop or Nadam. We could also experiment by implementing Dropout between fully connected layers.
+- The CPU-based C++ implementation is relatively slow, so I want to port it to CUDA, but it would require way more Kernel Fusion than for my MLP. For now, using CUDA only slows the program.
 - We could also translate matrices into vectors. This would be faster in C++ and also in Cuda since we need to flatten and expand matrices to use GPU acceleration.
 
 
