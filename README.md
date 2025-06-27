@@ -1,4 +1,4 @@
-﻿# MLP-pattern-recognition
+﻿# Convolutional Neural Network (in CPP)
 ### Model
 - **Model:** Convolutional Neural Network,
 - **Optimizer:** Adam optimizer,
@@ -38,7 +38,7 @@ After implementing these classes and having a good accuracy on MNIST database, I
 - There's two convolutional layers of 32 and 64 filters.
 - Then, there's two layers of 256 and 128 neurons.
 - In Adam optimizer, $$\beta_m = 0.9$$ and $$\beta_v = 0.999$$.
-- I used batches of **64 images**, and used it on the whole dataset. Since the **MNIST** dataset has 60000 training images, we had $$60000/32 \approx 1850$$ batches. It went only through on epoch because the code is quite time-consuming.
+- I used batches of **64 images**, and used it on the whole dataset. Since the **MNIST** dataset has 60000 training images, we had $$60000/64 \approx 937$$ batches. It went only through on epoch because the code is quite time-consuming.
 - If early stopping is toggled, patience $$= 150$$. Below gives bad results and stops the learning too early.
 
 ## Results
