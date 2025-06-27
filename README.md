@@ -57,13 +57,12 @@ After training on the whole train database, the model provides an **accuracy of 
 
 ### Discussion
 - The network achieves high accuracy on MNIST database, but on freehand drawings, the performance significantly drops. This could be because the numbers of the database used for training are all centered, and that the way they were generated was different than mine. I implemented a gradient around the brush to fit the MNIST database-style and it gave better results. A way to improve on freehand drawings would be to incorporate more varied training data, such as augmented with rotations, translations, and elastic distortions.
-
-### Next steps
-- I didn't implement flooding. It could improve the model.
-- The next move would be to implement max-pooling layers and/or batch normalization to solve this problem. When writing by hand it doesn't give satisfying results (clearly above 70% accuracy but clearly below 90%).
-- For performance, we could also try alternative optimizers like RMSprop or Nadam. We could also experiment by implementing Dropout between fully connected layers.
-- The CPU-based C++ implementation is relatively slow, so I want to port it to CUDA, but it would require way more Kernel Fusion than for my MLP. For now, using CUDA only slows the program.
-- We could also translate matrices into vectors. This would be faster in C++ and also in Cuda since we need to flatten and expand matrices to use GPU acceleration.
+- **Next steps:**
+  - I didn't implement flooding. It could improve the model.
+  - The next move would be to implement max-pooling layers and/or batch normalization to solve this problem. When writing by hand it doesn't give satisfying results (clearly above 70% accuracy but clearly below 90%).
+  - For performance, we could also try alternative optimizers like RMSprop or Nadam. We could also experiment by implementing Dropout between fully connected layers.
+  - The CPU-based C++ implementation is relatively slow, so I want to port it to CUDA, but it would require way more Kernel Fusion than for my MLP. For now, using CUDA only slows the program.
+  - We could also translate matrices into vectors. This would be faster in C++ and also in Cuda since we need to flatten and expand matrices to use GPU acceleration.
 
 
 ---
