@@ -82,7 +82,7 @@ Matrix CNN::forward(std::vector<Matrix>& inputs) {
 };
 
 // Backpropagation & optimization
-double CNN::backwards(std::vector<Matrix>& inputs, Matrix y_hot_one) {
+void CNN::backwards(std::vector<Matrix>& inputs, Matrix y_hot_one) {
 	// Backpropagation
 	backpropagation(inputs, y_hot_one);
 
@@ -91,11 +91,6 @@ double CNN::backwards(std::vector<Matrix>& inputs, Matrix y_hot_one) {
 	// Optimization
 	FFNN.Adam();
 	Adam();
-
-	// Getting and printing the loss
-	double loss = FFNN.CELoss(y_hot_one);
-	print(t, " : ", loss);
-	return loss;
 }
 
 // Backpropagation function (getting dJ/dK by computing dJ/dZ)
@@ -184,6 +179,11 @@ int CNN::idx(const int& alpha, const int& l, const int& j) {
 // Index of vector dK
 int CNN::idxKernel(const int& l, const int& i, const int& j) {
 	return m_kernelOffset[l] + i * m_convLayers[l].getCin() + j;
+}
+
+// Get the output of the CNN.
+Matrix CNN::getOutput() {
+	return FFNN.getOutput();
 }
 
 

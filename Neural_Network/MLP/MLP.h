@@ -25,7 +25,7 @@ public:
 	Matrix backpropagation(Matrix input, Matrix y_hot_one);
 	void Adam();
 
-	double CELoss(Matrix& y_hot_one);
+	Matrix getOutput();
 	
 	void saveWeights(const std::string& filename);
 	void loadWeights(const std::string& filename);

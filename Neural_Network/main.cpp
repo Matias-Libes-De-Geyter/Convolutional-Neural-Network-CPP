@@ -10,11 +10,10 @@ hyperparameters current_hyperparameters = {
 	mini_batch_size : 64,
 	learning_rate : 0.001,
 	dropout_rate : 0,
-	early_stopping : false,
-	patience : 150,
 	learn : false,
 	test : true,
 	store_weights : false,
+	store_output_data : false,
 	filters : { 32, 64 },
 	kernel_size : 3,
 	padding : 0,
@@ -22,14 +21,6 @@ hyperparameters current_hyperparameters = {
 	img_size : 28,
 	database : "numbers"
 };
-
-// Results
-//// av. très lent. Enlevé les normalisations. Bien plus rapide:
-//////// 64mb, { 32, 64 }cl, (3, 0, 2), { 128 }fl ->				20e = 0.76loss (peu stable également)
-//////// 64mb, { 32, 64 }cl, (3, 0, 2), { 256, 512 }fl -> 10e = 1loss |	20e = 0.6loss	(fluctue beaucoup ! Avec normalisation, fluctuait très très peu. Mais bcp plus lent.)
-// //////// 64mb, { 32, 64 }cl, (3, 0, 2), { 256, 512 }fl -> 97.12% sur les nombres.
-//////// 64mb, { 16, 32, 64 }cl, (5, 0, 1), { 256, 512 }fl ->			20e = 1.5loss
-
 
 int main() {
 	// User interface?

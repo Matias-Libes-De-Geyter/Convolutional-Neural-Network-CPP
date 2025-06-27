@@ -77,9 +77,9 @@ void MLP::Adam() {
 
 }
 
-// Cross-Entropy loss computation
-double MLP::CELoss(Matrix& y_hot_one) {
-    return CELossFunction(m_layers.back().output(), y_hot_one);
+// Get the output of the MLP.
+Matrix MLP::getOutput() {
+    return m_layers.back().output();
 }
 
 

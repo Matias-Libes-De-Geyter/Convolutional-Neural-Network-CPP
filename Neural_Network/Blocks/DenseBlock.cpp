@@ -1,4 +1,4 @@
-	#include "DenseBlock.h"
+#include "DenseBlock.h"
 
 // Constructor function
 DenseBlock::DenseBlock(const int& n_inputs, const int& n_neurons) : m_weights(n_inputs + 1, n_neurons) {

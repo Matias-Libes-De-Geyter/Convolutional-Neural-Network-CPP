@@ -18,6 +18,7 @@ struct hyperparameters {
 	bool learn;
 	bool test;
 	bool store_weights;
+	bool store_output_data;
 	std::vector<int> filters;
 	int kernel_size;
 	int padding;
@@ -37,6 +38,7 @@ Matrix unFlatten(const dvector& A, const int& iFtMap, const int& rows, const int
 // Utility function used in TrainerClassifier.h
 Matrix flattenToMatrix(const std::vector<double>& flat_image, int rows, int cols);
 void readMNIST(const std::string& imageFile, const std::string& labelFile, dmatrix& images, dvector& labels);
+void writeFile(const dvector& accuracies, const dvector& trainLosses, const dvector& testLosses, int nb_epochs, const std::string& filename);
 
 
 // ===== PRINT FUNCTIONS ===== //

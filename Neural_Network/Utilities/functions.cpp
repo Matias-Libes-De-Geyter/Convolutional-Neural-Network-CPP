@@ -111,3 +111,19 @@ void readMNIST(const std::string& imageFile, const std::string& labelFile,
 		labels[i] = static_cast<double>(label);
 	}
 }
+
+// Write output data to plot with python
+void writeFile(const dvector& accuracies, const dvector& trainLosses, const dvector& testLosses, int nb_epochs, const std::string& filename) {
+	std::ofstream outFile(filename);
+	if (!outFile) {
+		std::cerr << "Error opening file for writing: " << filename << std::endl;
+		return;
+	}
+
+	outFile << "Epoch,Accuracy,TrainLoss,TestLoss\n";
+	for (int epoch = 0; epoch < nb_epochs; ++epoch) {
+		outFile << epoch + 1 << "," << accuracies[epoch] << "," << trainLosses[epoch] << "," << testLosses[epoch] << "\n";
+	}
+
+	outFile.close();
+}

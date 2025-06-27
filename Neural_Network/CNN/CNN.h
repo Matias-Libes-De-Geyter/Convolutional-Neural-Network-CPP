@@ -36,9 +36,11 @@ public:
 
 	Matrix forward(std::vector<Matrix>& inputs);
 	
-	double backwards(std::vector<Matrix>& inputs, Matrix y_hot_one);
+	void backwards(std::vector<Matrix>& inputs, Matrix y_hot_one);
 	void backpropagation(std::vector<Matrix>& inputs, Matrix& y_hot_one);
 	void Adam();
+
+	Matrix getOutput();
 	
 	void loadWeights();
 	void saveWeights();

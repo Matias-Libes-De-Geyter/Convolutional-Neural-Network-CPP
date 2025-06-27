@@ -1,0 +1,18 @@
+hyperparameters current_hyperparameters = {
+	number_classes : 10,
+	hidden_layers_sizes : { 256, 128 },
+	epochs : 0,
+	mini_batch_size : 64,
+	learning_rate : 0.001,
+	dropout_rate : 0,
+	learn : true,
+	test : true,
+	store_weights : true,
+	store_output_data : true,
+	filters : { 32, 64 },
+	kernel_size : 3,
+	padding : 0,
+	stride : 2,
+	img_size : 28,
+	database : "numbers"
+};
