@@ -45,7 +45,7 @@ After having implemented these classes and having a good accuracy on MNIST datab
 
 ### Observations
 - Results on MNIST train database. When ran into the whole training database, the model gives the following results:
-![Plots](img/latest_output.JPG)
+![Plots](img/latest_output.png)
 
 Here, values are plotted each epochs. The early stopper wasn't active. We can see the training accuracy, validation accuracy and training loss for each epochs.
 

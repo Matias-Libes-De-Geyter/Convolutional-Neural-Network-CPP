@@ -92,13 +92,11 @@ int main() {
 
     // Main loop
     bool firstPress = true;
-    while (window.isOpen())
-    {
+    while (window.isOpen()) {
         sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
         cursor.setPosition(mousePos);
 
-        while (const std::optional event = window.pollEvent())
-        {
+        while (const std::optional event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>())
                 window.close();
             else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
