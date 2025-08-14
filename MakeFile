@@ -1,12 +1,12 @@
 all: compile link
 
-CXXFLAGS = -INeural_Network/Trainer -INeural_Network/CNN -INeural_Network/MLP -INeural_Network/Blocks -INeural_Network/Utilities -Ilibs/include
+CXXFLAGS = -INeural_Network/NN -INeural_Network/Blocks -INeural_Network/Classifier -INeural_Network/Dataset -INeural_Network/Utilities -Ilibs/include
 
 SOURCES = $(wildcard Neural_Network/*.cpp) \
-          $(wildcard Neural_Network/Trainer/*.cpp) \
-          $(wildcard Neural_Network/CNN/*.cpp) \
-          $(wildcard Neural_Network/MLP/*.cpp) \
+          $(wildcard Neural_Network/NN/*.cpp) \
           $(wildcard Neural_Network/Blocks/*.cpp) \
+          $(wildcard Neural_Network/Classifier/*.cpp) \
+          $(wildcard Neural_Network/Dataset/*.cpp) \
           $(wildcard Neural_Network/Utilities/*.cpp)
 
 compile:
