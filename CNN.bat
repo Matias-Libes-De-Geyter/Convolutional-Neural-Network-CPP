@@ -1,1 +1,1 @@
-start executable/main.exe
+start main.exe

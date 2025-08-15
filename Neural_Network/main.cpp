@@ -9,13 +9,13 @@ hyperparameters hyper = {
     hidden_layer_sizes : {256, 128},
     learning_rate : 0.001,
     dropout_rate : 0.2,
-    max_epochs : 30,
-    n_train_samples : 1000,
+    max_epochs : 50,
+    n_train_samples : 10000,
     mini_batch_size : 32,
-    n_val_samples : 500,
+    n_val_samples : 1000,
 
-    early_stopping : false,
-    patience : 3,
+    early_stopping : true,
+    patience : 10,
 
     filters : { 32, 64 },
     kernel_size : 3,

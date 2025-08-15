@@ -38,8 +38,8 @@ After having implemented these classes and having a good accuracy on MNIST datab
 - There's two convolutional layers of 32 and 64 filters.
 - Then, there's two layers of 256 and 128 neurons.
 - In Adam optimizer, $$\beta_m = 0.9$$ and $$\beta_v = 0.999$$.
-- I used batches of **32 images**, and used it on the whole dataset. Since the **MNIST** dataset has 60000 training images, only trained on $$1000$$ samples, during $$30$$ epochs.
-- If early stopping is toggled, patience $$= 5$$. Which could be improved given the results
+- I used batches of **32 images**, and used it on the whole dataset. Since the **MNIST** dataset has 60000 training images, I chose to only train the program on $$10000$$ samples, during $$50$$ epochs.
+- If early stopping is toggled, patience $$= 10$$. Which seems to give correct results.
 
 ## Results
 
@@ -47,11 +47,11 @@ After having implemented these classes and having a good accuracy on MNIST datab
 - Results on MNIST train database. When ran into the whole training database, the model gives the following results:
 ![Plots](img/latest_output.png)
 
-Here, values are plotted each epochs. The early stopper wasn't active. We can see the training accuracy, validation accuracy and training loss for each epochs.
+Here, values are plotted each epochs. The early stopper stopped 3 epochs before the end. We can see the training accuracy, validation accuracy and training loss for each epochs.
 
 - Results on MNIST numbers test database:
 
-After training on the whole train database, the model provides a validation **accuracy of $$\approx 95$$%**, which is slightly better that my FFNN.
+After training on the whole train database, the model provides a validation **accuracy of $$\approx 98$$%**, which is better that my FFNN ($$\approx 96$$%).
 
 *- Meanwhile, the code on CUDA ran two times slower than the basic C++ code. It is an interesting result that shows how we have to improve for the CUDA implementation.*
 
@@ -102,6 +102,7 @@ NeuralNetwork/
 │   ├── testing.gif     # Training example
 │   ├── training.gif    # Testing example
 │   ├── latest_output.png
+│   ├── new_output.png
 │   └── old_output.png
 │
 ├── libs/          # SFML Library used for the window
